@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Esquema Completo de Precios de Estaciones de Servicio (EESS)",
+  "type": "object",
+  "required": [
+    "Fecha",
+    "ListaEESSPrecio",
+    "Nota",
+    "ResultadoConsulta"
+  ],
+  "properties": {
+    "Fecha": {
+      "type": "string",
+      "description": "Fecha y hora de la actualización de los datos."
+    },
+    "Nota": {
+      "type": "string"
+    },
+    "ResultadoConsulta": {
+      "type": "string"
+    },
+    "ListaEESSPrecio": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "C.P.",
+          "Dirección",
+          "Latitud",
+          "Localidad",
+          "Longitud_x0020__x0028_WGS84_x0029_",
+          "Municipio",
+          "Provincia",
+          "Rótulo",
+          "IDEESS",
+          "IDMunicipio",
+          "IDProvincia",
+          "IDCCAA"
+        ],
+        "properties": {
+          "C.P.": { "type": "string" },
+          "Dirección": { "type": "string" },
+          "Horario": { "type": "string" },
+          "Latitud": { "type": "string" },
+          "Localidad": { "type": "string" },
+          "Longitud_x0020__x0028_WGS84_x0029_": { "type": "string" },
+          "Margen": { "type": "string" },
+          "Municipio": { "type": "string" },
+          "Precio_x0020_Adblue": { "type": "string" },
+          "Precio_x0020_Amoniaco": { "type": "string" },
+          "Precio_x0020_Biodiesel": { "type": "string" },
+          "Precio_x0020_Bioetanol": { "type": "string" },
+          "Precio_x0020_Biogas_x0020_Natural_x0020_Comprimido": { "type": "string" },
+          "Precio_x0020_Biogas_x0020_Natural_x0020_Licuado": { "type": "string" },
+          "Precio_x0020_Diésel_x0020_Renovable": { "type": "string" },
+          "Precio_x0020_Gas_x0020_Natural_x0020_Comprimido": { "type": "string" },
+          "Precio_x0020_Gas_x0020_Natural_x0020_Licuado": { "type": "string" },
+          "Precio_x0020_Gases_x0020_licuados_x0020_del_x0020_petróleo": { "type": "string" },
+          "Precio_x0020_Gasoleo_x0020_A": { "type": "string" },
+          "Precio_x0020_Gasoleo_x0020_B": { "type": "string" },
+          "Precio_x0020_Gasoleo_x0020_Premium": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E10": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E25": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E5": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E5_x0020_Premium": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E85": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_98_x0020_E10": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_98_x0020_E5": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_Renovable": { "type": "string" },
+          "Precio_x0020_Hidrogeno": { "type": "string" },
+          "Precio_x0020_Metanol": { "type": "string" },
+          "Provincia": { "type": "string" },
+          "Remisión": { "type": "string" },
+          "Rótulo": { "type": "string" },
+          "Tipo_x0020_Venta": { "type": "string" },
+          "_x0025__x0020_BioEtanol": { "type": "string" },
+          "_x0025__x0020_Éster_x0020_metílico": { "type": "string" },
+          "IDEESS": { "type": "string" },
+          "IDMunicipio": { "type": "string" },
+          "IDProvincia": { "type": "string" },
+          "IDCCAA": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

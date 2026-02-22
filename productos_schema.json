@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Catálogo de Productos de Combustible",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "IDProducto",
+      "NombreProducto",
+      "NombreProductoAbreviatura"
+    ],
+    "properties": {
+      "IDProducto": {
+        "type": "string",
+        "description": "Identificador numérico único del producto."
+      },
+      "NombreProducto": {
+        "type": "string",
+        "description": "Nombre completo del combustible o servicio."
+      },
+      "NombreProductoAbreviatura": {
+        "type": "string",
+        "description": "Nombre corto o abreviado del producto."
+      }
+    }
+  }
+}
+

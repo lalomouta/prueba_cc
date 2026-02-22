@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Esquema de Precios Estaciones de Servicio Marítimas",
+  "type": "object",
+  "required": [
+    "Fecha",
+    "ListaEESSPrecio",
+    "Nota",
+    "ResultadoConsulta"
+  ],
+  "properties": {
+    "Fecha": { "type": "string" },
+    "Nota": { "type": "string" },
+    "ResultadoConsulta": { "type": "string" },
+    "ListaEESSPrecio": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "C.P.",
+          "Dirección",
+          "Latitud",
+          "Longitud_x0020__x0028_WGS84_x0029_",
+          "Rótulo",
+          "IDPosteMaritimo"
+        ],
+        "properties": {
+          "C.P.": { "type": "string" },
+          "Dirección": { "type": "string" },
+          "Horario": { "type": "string" },
+          "Latitud": { "type": "string" },
+          "Localidad": { "type": "string" },
+          "Longitud_x0020__x0028_WGS84_x0029_": { "type": "string" },
+          "Municipio": { "type": "string" },
+          "Precio_x0020_Gasoleo_x0020_A_x0020_habitual": { "type": "string" },
+          "Precio_x0020_Gasoleo_x0020_B": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E10": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E5": { "type": "string" },
+          "Precio_x0020_Gasóleo_x0020_para_x0020_uso_x0020_marítimo": { "type": "string" },
+          "Provincia": { "type": "string" },
+          "Puerto": { "type": "string" },
+          "Remisión": { "type": "string" },
+          "Rótulo": { "type": "string" },
+          "Tipo_x0020_Venta": { "type": "string" },
+          "IDPosteMaritimo": { "type": "string" },
+          "Precio_x0020_Adblue": { "type": "string" },
+          "Precio_x0020_Amoniaco": { "type": "string" },
+          "Precio_x0020_Biogas_x0020_Natural_x0020_Comprimido": { "type": "string" },
+          "Precio_x0020_Biogas_x0020_Natural_x0020_Licuado": { "type": "string" },
+          "Precio_x0020_Diésel_x0020_Renovable": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E25": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_95_x0020_E85": { "type": "string" },
+          "Precio_x0020_Gasolina_x0020_Renovable": { "type": "string" },
+          "Precio_x0020_Metanol": { "type": "string" },
+          "IDMunicipio": { "type": "string" },
+          "IDProvincia": { "type": "string" },
+          "IDCCAA": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

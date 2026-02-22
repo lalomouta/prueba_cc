@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Catálogo de Municipios y Jerarquía Territorial",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "IDMunicipio",
+      "IDProvincia",
+      "IDCCAA",
+      "Municipio",
+      "Provincia",
+      "CCAA"
+    ],
+    "properties": {
+      "IDMunicipio": {
+        "type": "string",
+        "description": "Código identificador del municipio."
+      },
+      "IDProvincia": {
+        "type": "string",
+        "description": "Código identificador de la provincia a la que pertenece."
+      },
+      "IDCCAA": {
+        "type": "string",
+        "description": "Código identificador de la Comunidad Autónoma."
+      },
+      "Municipio": {
+        "type": "string",
+        "description": "Nombre oficial del municipio."
+      },
+      "Provincia": {
+        "type": "string",
+        "description": "Nombre de la provincia."
+      },
+      "CCAA": {
+        "type": "string",
+        "description": "Nombre de la Comunidad Autónoma."
+      }
+    }
+  }
+}

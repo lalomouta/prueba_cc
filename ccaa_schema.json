@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Catálogo de Comunidades Autónomas (CCAA)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "IDCCAA",
+      "CCAA"
+    ],
+    "properties": {
+      "IDCCAA": {
+        "type": "string",
+        "description": "Código identificador único de la Comunidad Autónoma."
+      },
+      "CCAA": {
+        "type": "string",
+        "description": "Nombre oficial de la Comunidad Autónoma."
+      }
+    }
+  }
+}
+
