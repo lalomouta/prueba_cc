@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Fuel prices pipeline — fetches Spanish MINETUR data every 6 hours and upserts into PostgreSQL/PostGIS
+
+Parameters:
+  DbHost:
+    Type: String
+    Description: PostgreSQL host (RDS endpoint)
+  DbPort:
+    Type: String
+    Default: '5432'
+    Description: PostgreSQL port
+  DbName:
+    Type: String
+    Description: PostgreSQL database name
+  DbUser:
+    Type: String
+    Description: PostgreSQL user
+  DbPassword:
+    Type: String
+    NoEcho: true
+    Description: PostgreSQL password
+  VpcSubnetIds:
+    Type: CommaDelimitedList
+    Description: Comma-separated list of private subnet IDs for the Lambda VPC config
+    Default: ''
+  VpcSecurityGroupIds:
+    Type: CommaDelimitedList
+    Description: Comma-separated list of security group IDs for the Lambda VPC config
+    Default: ''
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 300
+    MemorySize: 512
+    Environment:
+      Variables:
+        DB_HOST: !Ref DbHost
+        DB_PORT: !Ref DbPort
+        DB_NAME: !Ref DbName
+        DB_USER: !Ref DbUser
+        DB_PASSWORD: !Ref DbPassword
+
+Resources:
+  FuelPricesPipelineFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: fuel-prices-pipeline
+      Handler: lambda_function.lambda_handler
+      CodeUri: .
+      Description: Fetches Spanish fuel station data from MINETUR API and upserts into PostgreSQL
+      # Uncomment and populate VpcConfig when deploying against a private RDS instance
+      # VpcConfig:
+      #   SubnetIds: !Ref VpcSubnetIds
+      #   SecurityGroupIds: !Ref VpcSecurityGroupIds
+      Events:
+        ScheduledRun:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0 */6 * * ? *)
+            Description: Run every 6 hours, matching the original Airflow schedule
+            Enabled: true
+      Policies:
+        - AWSLambdaVPCAccessExecutionRole
+
+Outputs:
+  FuelPricesPipelineFunction:
+    Description: Lambda function ARN
+    Value: !GetAtt FuelPricesPipelineFunction.Arn
