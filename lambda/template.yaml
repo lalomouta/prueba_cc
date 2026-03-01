@@ -63,6 +63,8 @@ Resources:
             Enabled: true
       Policies:
         - AWSLambdaVPCAccessExecutionRole
+    Metadata:
+      BuildMethod: makefile
 
 Outputs:
   FuelPricesPipelineFunction:
